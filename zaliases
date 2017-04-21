@@ -1,0 +1,52 @@
+#PHPStorm XDebug ENV
+function setXDebug() {
+    export XDEBUG_CONFIG="idekey=PHPSTORM"
+}
+
+if hash thefuck 2>/dev/null; then
+    eval $(thefuck --alias)
+fi
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias reload='source ~/.zshrc'
+alias reload-tmux='tmux source-file ~/.tmux.conf'
+alias xdebug_on="setXDebug"
+alias xdebug_off='unset XDEBUG_CONFIG'
+alias cafe='cat /dev/urandom | hexdump -C | grep "ca fe"'
+alias ssh-register-agent='eval $(ssh-agent) && ssh-add'
+alias docker-clean='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
+alias docker-rebuild='docker-clean && docker build .'
+alias moo="fortune -s fortunes | cowsay"
+alias top="htop"
+alias lvm-mirror-status="sudo lvs -a -o +devices"
+alias update-workstation="ansible-playbook -i /home/LvApplications/workstation-config/inventory /home/LvApplications/workstation-config/workstation.yml -kK"
+alias security-scan="sudo lynis audit system"
+alias pipes="pipes.sh"
+
+git() {
+  if [[ $@ == 'standup' ]]; then
+    command git standup -d 10
+  else
+    command git "$@"
+  fi
+}
+
+if grep --color=auto "a" $HOME/.Xauthority &> /dev/null
+then
+  alias grep='grep --color=auto'
+  export GREP_COLOR='1;33'
+fi
+
+if [ -c $HOME/.zsh/zaliases.local ]; then
+    . $HOME/.zsh/zaliases.local
+fi

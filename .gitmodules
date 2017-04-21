@@ -1,0 +1,9 @@
+[submodule ".submodules/oh-my-zsh"]
+	path = .submodules/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule ".submodules/zsh-git-prompt"]
+	path = .submodules/zsh-git-prompt
+	url = https://github.com/olivierverdier/zsh-git-prompt.git
+[submodule ".submodules/git-hub"]
+	path = .submodules/git-hub
+	url = https://github.com/ingydotnet/git-hub.git
