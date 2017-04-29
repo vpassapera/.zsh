@@ -25,7 +25,7 @@ function parse_git_dirty() {
       DETAILS="$DETAILS$ZSH_THEME_GIT_PROMPT_STAGED$GIT_STAGED%{${reset_color}%} "
   fi
   if [ "$GIT_CHANGED" -ne "0" ]; then
-      DETAILS="$DETAILS$ZSH_THEME_GIT_PROMPT_CHANGED$GIT_CHANGED%{${reset_color}%} "
+      DETAILS="$DETAILS$ZSH_THEME_GIT_PROMPT_CHANGED$GIT_CHANGED%{${reset_color}%}%f "
   fi
   if [ "$GIT_CONFLICTS" -ne "0" ]; then
       DETAILS="$DETAILS$ZSH_THEME_GIT_PROMPT_CONFLICTS$GIT_CONFLICTS%{${reset_color}%} "
