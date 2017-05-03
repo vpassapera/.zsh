@@ -1,10 +1,22 @@
 . $HOME/.zsh/.submodules/zsh-git-prompt/zshrc.sh
 
+function git_stash_size {
+    lines=$(git stash list -n 100 2> /dev/null) || 0
+    count=0
+
+    if [ "${#lines}" -gt 0 ]; then
+        count=$(echo "$lines" | wc -l | sed 's/^[ \t]*//')
+    fi
+
+    echo "$count";
+}
+
 function parse_git_dirty() {
   local STATUS=''
   local FLAGS
   DETAILS=" "
   FLAGS=('--porcelain')
+  GIT_STASH_COUNT=$(git_stash_size)
   if [[ "$(command git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then
     if [[ $POST_1_7_2_GIT -gt 0 ]]; then
       FLAGS+='--ignore-submodules=dirty'
@@ -32,6 +44,9 @@ function parse_git_dirty() {
   fi
   if [ "$GIT_UNTRACKED" -ne "0" ]; then
       DETAILS="$DETAILS$ZSH_THEME_GIT_PROMPT_UNTRACKED$GIT_UNTRACKED%{${reset_color}%} "
+  fi
+  if [ "$GIT_STASH_COUNT" -ne "0" ]; then
+      DETAILS="$DETAILS$ZSH_THEME_GIT_PROMPT_STASHED$GIT_STASH_COUNT%{${reset_color}%} "
   fi
 
   while [ "$DETAILS" != "${DETAILS# }" ]
@@ -67,5 +82,6 @@ ZSH_THEME_GIT_PROMPT_CHANGED="%{%F{014}%}%{U:%G%}"
 ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[red]%}%{↓:%G%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[green]%}%{↑:%G%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[yellow]%}%{?:%G%}"
+ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[magenta]%}%{ST:%G%}"
 
 PROMPT=$'%{$fg[blue]%}%D{[%X]} %{$fg[green]%}[%n@%m]%{$reset_color%} %{$fg[white]%}%~%{$reset_color%} $(git_prompt_info) %{$fg[blue]%}→%{$fg_bold[blue]%} %{$reset_color%} '
