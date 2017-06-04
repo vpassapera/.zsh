@@ -3,9 +3,11 @@
 export ZSH=$HOME/.oh-my-zsh
 
 #COMPLETION_WAITING_DOTS="true"
-ZSH_TMUX_AUTOSTART_ONCE=true
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOCONNECT=false
+if [ -f /usr/bin/tmux ]; then
+    ZSH_TMUX_AUTOSTART_ONCE=true
+    ZSH_TMUX_AUTOSTART=true
+    ZSH_TMUX_AUTOCONNECT=false
+fi
 ZSH_THEME="candy-alt/candy-alt"
 ENABLE_CORRECTION="true"
 plugins=(command-not-found gem git-flow git-extras pip sudo vagrant tmux tmuxinator)
