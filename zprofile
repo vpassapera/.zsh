@@ -3,14 +3,18 @@
 export ZSH=$HOME/.oh-my-zsh
 
 #COMPLETION_WAITING_DOTS="true"
-if [ -f /usr/bin/tmux ]; then
+plugins=(command-not-found gem git-flow git-extras pip sudo vagrant)
+
+if [ -f /usr/bin/tmux ] || [ -f /usr/local/bin/tmux ]; then
     ZSH_TMUX_AUTOSTART_ONCE=true
     ZSH_TMUX_AUTOSTART=true
     ZSH_TMUX_AUTOCONNECT=false
+    plugins+=('tmux')
+    plugins+=('tmuxinator')
 fi
+
 ZSH_THEME="candy-alt/candy-alt"
 ENABLE_CORRECTION="true"
-plugins=(command-not-found gem git-flow git-extras pip sudo vagrant tmux tmuxinator)
 
 source $HOME/.zsh/.submodules/git-hub/.rc
 source $ZSH/oh-my-zsh.sh
