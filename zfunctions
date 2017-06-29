@@ -62,3 +62,8 @@ extract () {
     printf "${PLAIN}"
 }
 
+what_the_commit () {
+  echo $(curl --silent http://whatthecommit.com/index.txt)
+}
+
+alias wtc='what_the_commit'
