@@ -48,6 +48,6 @@ then
   export GREP_COLOR='1;33'
 fi
 
-if [ -c $HOME/.zsh/zaliases.local ]; then
+if [ -f $HOME/.zsh/zaliases.local ]; then
     . $HOME/.zsh/zaliases.local
 fi
