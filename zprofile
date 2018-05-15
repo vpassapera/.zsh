@@ -3,7 +3,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 #COMPLETION_WAITING_DOTS="true"
-plugins=(command-not-found gem git-flow git-extras pip sudo vagrant)
+plugins=(command-not-found gem git-flow git-extras pip sudo vagrant zsh-syntax-highlighting)
 
 if [ -f /usr/bin/tmux ] || [ -f /usr/local/bin/tmux ]; then
     ZSH_TMUX_AUTOSTART_ONCE=true
