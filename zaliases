@@ -55,3 +55,15 @@ fi
 if [ -f $HOME/.zsh/zaliases.local ]; then
     . $HOME/.zsh/zaliases.local
 fi
+
+if [ -x "$(command -v exa)" ]; then
+    alias ls='exa'
+fi
+
+if [ -x "$(command -v bat)" ]; then
+    alias cat='bat'
+fi
+
+if [ -x "$(command -v nvim)" ]; then
+    alias nano="vim"
+fi
