@@ -10,3 +10,6 @@
 [submodule ".submodules/zsh-syntax-highlighting"]
 	path = .submodules/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule ".submodules/powerlevel9k"]
+	path = .submodules/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git

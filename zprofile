@@ -13,7 +13,9 @@ if [ -f /usr/bin/tmux ] || [ -f /usr/local/bin/tmux ]; then
     plugins+=('tmuxinator')
 fi
 
-ZSH_THEME="candy-alt/candy-alt"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time virtualenv context dir rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history)
 ENABLE_CORRECTION="true"
 
 source $HOME/.zsh/.submodules/git-hub/.rc
