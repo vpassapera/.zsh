@@ -269,6 +269,5 @@ set -g status-keys vi
 set -g mode-keys vi
 set -g @yank_selection 'primary'
 set -g @shell_mode 'vi'
-set-option -g default-shell /usr/bin/zsh
-bind e new-window -n '~/.tmux.conf.local' "sh -c '\${EDITOR:-vim} ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display \"~/.tmux.conf soured\"'"
-
+set-option -g default-shell $SHELL
+bind e new-window -n '~/.tmux.conf.local' "sh -c '\${EDITOR:-vim} ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display \"~/.tmux.conf sourced\"'"
