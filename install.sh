@@ -11,6 +11,7 @@ mkdir -p $HOME/.oh-my-zsh/custom/themes/
 
 ln -sf $HOME/.zsh/themes/candy-alt $HOME/.oh-my-zsh/custom/themes
 ln -sf $HOME/.zsh/.submodules/powerlevel9k $HOME/.oh-my-zsh/custom/themes
+ln -sf $HOME/.zsh/.submodules/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins
 echo "Initializing .zsh"
 ln -sf $HOME/.zsh/zaliases $HOME/.zaliases
 ln -sf $HOME/.zsh/zenv $HOME/.zenv
