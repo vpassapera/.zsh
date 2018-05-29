@@ -1,4 +1,10 @@
-export GOPATH=/opt/go
+if [ -f $HOME/.zsh/zenv.local ]; then
+  . $HOME/.zsh/zenv.local
+fi
+
+#export GOPATH=/opt/go Moved to zenv.local
+#export SSH_KEY_PATH="$HOME/.ssh/rsa_id" moved to zenv.local
+
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -6,11 +12,7 @@ export EDITOR='nvim'
 export GIT_EDITOR=$(which nvim)
 export LANG=en_US.UTF-8
 export UPDATE_ZSH_DAYS=1
-export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export PATH=$PATH:~/.local/bin:~/.gem/ruby/1.8/bin:/opt/nginx/sbin:$GOPATH/bin
 export ANSIBLE_NOCOWS=1
 export GIT_STAT_LOCATION=$HOME/.git-stats
 
-if [ -f $HOME/.zsh/zenv.local ]; then
-  . $HOME/.zsh/zenv.local
-fi
