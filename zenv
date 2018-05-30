@@ -15,4 +15,3 @@ export UPDATE_ZSH_DAYS=1
 export PATH=$PATH:~/.local/bin:~/.gem/ruby/1.8/bin:/opt/nginx/sbin:$GOPATH/bin
 export ANSIBLE_NOCOWS=1
 export GIT_STAT_LOCATION=$HOME/.git-stats
-
