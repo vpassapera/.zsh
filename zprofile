@@ -24,7 +24,8 @@ if [ -f /usr/bin/tmux ] || [ -f /usr/local/bin/tmux ]; then
 fi
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time virtualenv context dir rbenv vcs)
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time os_icon virtualenv context dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history)
 ENABLE_CORRECTION="true"
 
@@ -33,6 +34,10 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zenv
 source $HOME/.zaliases
 source $HOME/.zfunctions
+
+if [ -c $HOME/.zsh/zprofile.local ]; then
+   source $HOME/.zsh/zprofile.local
+fi
 
 if [ -c /etc/bash_completion.d/climate_completion ]; then
     source /etc/bash_completion.d/climate_completion
