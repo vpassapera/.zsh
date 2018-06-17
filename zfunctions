@@ -3,7 +3,7 @@ function vagrant_status()
     if [ -d "$(pwd)/.vagrant" ]; then
       output=$(vagrant status --machine-readable | grep ",state," | egrep -o '([a-z_]*)$')
       if [ ! -z $output ]; then
-        echo "vagrant: $output"
+        echo -e "\uf473: ${output/_/ }"
       fi
     fi
 }
