@@ -1,3 +1,13 @@
+function vagrant_status()
+{
+    if [ -d "$(pwd)/.vagrant" ]; then
+      output=$(vagrant status --machine-readable | grep ",state," | egrep -o '([a-z_]*)$')
+      if [ ! -z $output ]; then
+        echo "vagrant: $output"
+      fi
+    fi
+}
+
 function myip ()
 {
     res=$(curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+')
@@ -67,3 +77,4 @@ what_the_commit () {
 }
 
 alias wtc='what_the_commit'
+
