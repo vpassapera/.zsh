@@ -1,3 +1,10 @@
+function is_symfony()
+{
+    if [ -f "$(pwd)/composer.json" ] && [ $(grep -c "symfony/symfony" "$(pwd)/composer.json") -ge 1 ]; then
+      echo -e "\ue757"
+    fi
+}
+
 function vagrant_status()
 {
     if [ -f "$(pwd)/Vagrantfile" ]; then

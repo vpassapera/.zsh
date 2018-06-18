@@ -29,9 +29,9 @@ if [ -f $HOME/.zsh/zprofile.local ]; then
   source $HOME/.zsh/zprofile.local
 fi
 
-POWERLEVEL9K_CUSTOM_VAGRANT_STATUS="vagrant_status"
+source $HOME/.zsh/zextras
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time os_icon virtualenv context dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history background_jobs custom_vagrant_status)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history background_jobs custom_vagrant_status custom_symfony_status)
 ENABLE_CORRECTION="true"
 
 source $HOME/.zsh/.submodules/git-hub/.rc
