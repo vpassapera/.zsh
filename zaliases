@@ -34,6 +34,7 @@ alias vim="nvim"
 alias headphones="/opt/a2dp.py 04:52:C7:09:6B:A3"
 alias say="spd-say"
 alias git-update-submodules="git submodule update --init --recursive"
+alias unix='echo $(date +%s)'
 
 if [ -x /usr/bin/trizen ]; then
   alias pacaur="trizen"
