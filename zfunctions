@@ -41,7 +41,7 @@ function down4me ()
 
 function update-zsh-configs() {
     currdir=$(pwd);
-    cd ~/.zsh && git fetch origin && git pull origin master && cd $currdir
+    cd ~/.zsh && git fetch origin && git pull origin master && git-update-submodules && cd $currdir
 }
 
 extract () {
