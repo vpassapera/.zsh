@@ -23,7 +23,7 @@ if [ -f /usr/bin/tmux ] || [ -f /usr/local/bin/tmux ]; then
     plugins+=('tmuxinator')
 fi
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 if [ -f $HOME/.zsh/zprofile.local ]; then
   source $HOME/.zsh/zprofile.local
