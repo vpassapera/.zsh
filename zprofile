@@ -10,7 +10,6 @@ plugins=(
   git-extras
   pip
   sudo
-  vagrant
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
